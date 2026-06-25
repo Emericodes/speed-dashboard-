@@ -1,0 +1,164 @@
+:root {
+  --bg-app: #f5f5f7;          
+  --bg-card: #ffffff;        
+  --text-main: #1d1d1f;      
+  --text-muted: #6e6e73;      
+  --border-color: #e8e8ed;    
+  --radius-lg: 16px;         
+  --radius-md: 12px;          
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.47059;
+  letter-spacing: -0.022em;
+  -webkit-font-smoothing: antialiased;
+}
+
+#center {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header / Hero */
+.hero {
+  padding: 12px 0 4px 0;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+}
+
+.customer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cartes Clients */
+.customer-card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: var(--transition-smooth);
+}
+
+.customer-card:active {
+  transform: scale(0.99);
+  background-color: #fafafa;
+}
+
+.customer-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -0.011em;
+}
+
+.customer-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.customer-card p strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.card-actions button {
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.card-actions button:active {
+  background-color: var(--bg-app);
+  transform: scale(0.97);
+}
+
+.no-results {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 48px 16px;
+  font-size: 15px;
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+}
+
+
+@media (min-width: 600px) {
+  #center {
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+ 
+  .customer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  .card-actions {
+    flex-direction: row;
+  }
+
+  .card-actions button {
+    flex: 1;
+    padding: 10px 14px;
+  }
+
+
+  .customer-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    border-color: #d2d2d7;
+  }
+
+  .card-actions button:hover {
+    background-color: var(--bg-app);
+    border-color: #d2d2d7;
+  }
+}
